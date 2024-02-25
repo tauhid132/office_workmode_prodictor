@@ -1,63 +1,45 @@
-<footer class="main-footer">
-    <div class="upper-box">
-        <div class="auto-container">
-            <div class="row">
-                <div class="col-lg-4 col-md-7">
-                    <div class="widget">
-                        <a  href="{{ route('view.home.page') }}"><img class="mb-3" src="{{ asset('logo-footer.png') }}" alt=""></a>
-                        <div class="text">Rowad Al Ghad is a Pest Control Company is Dubai, UAE. Provding service like insect control, Sanitizing & Disinfecting, Building Cleaning etc.</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="widget links-widget">
-                        <h4 class="widget_title">Pages</h4>
-                        <div class="widget-content">
-                            <ul class="list">
-                                <li><a href="{{ route('view.home.page') }}">Home</a></li>
-                                <li><a href="{{ route('view.about.us') }}">About Us</a></li>
-                                <li><a href="{{ route('view.blogs') }}">Blogs & Articles </a></li>
-                                <li><a href="{{ route('view.contact.us') }}">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="widget links-widget">
-                        <h4 class="widget_title">Services</h4>
-                        <div class="widget-content">
-                            <ul class="list">
-                                <li><a href="{{ route('view.sanitizing') }}">Sanitizing & Disinfecting Service </a></li>
-                                <li><a href="{{ route('view.rope.access.cleaning') }}">Rope Access Cleaning </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6">
-                    <div class="widget contact-widget">
-                        <h4 class="widget_title">Contact</h4>
-                        <ul>
-                            <li>Dubai, United Arab Emirates</li>
-                            <li><a href="mailto:sales@pestcontrol-dubai.ae">sales@pestcontrol-dubai.ae</a></li>
-                            <li><a href="tel:0569193222">0569193222</a></li>
-                        </ul>
-                        <ul class="social-icon d-flex">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </div>               
+<footer class="bg-dark py-7">
+	<div class="container">
+		<div class="row mx-auto">
+			<div class="col-md-10 col-xl-6 mx-auto text-center">
+				<!-- Logo -->
+				{{-- <img class="mx-auto h-60px" src="assets/images/logo-light.svg" alt="logo"> --}}
+				<p class="mt-3 text-white">Hybrid Office Prodictor is a ML Based Workmode Prediction System. The system can predict employee's most efficient workmode based on projects</p>
+				<!-- Links -->
+				<ul class="nav justify-content-between text-primary-hover mt-3 mt-md-0">
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Our Services</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Workmode Prodictor</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">HRM API</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Contact us</a></li>
+				</ul>
+				<!-- Social media button -->
+				<ul class="list-inline mt-3 mb-0">
+					<li class="list-inline-item"> 
+						<a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#">
+							<i class="fab fa-fw fa-facebook-f"></i>
+						</a> 
+					</li>
+					<li class="list-inline-item"> 
+						<a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#">
+							<i class="fab fa-fw fa-instagram"></i>
+						</a> 
+					</li>
+					<li class="list-inline-item"> 
+						<a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#">
+							<i class="fab fa-fw fa-twitter"></i>
+						</a> 
+					</li>
+					<li class="list-inline-item"> 
+						<a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#">
+							<i class="fab fa-fw fa-linkedin-in"></i>
+						</a> 
+					</li>
+				</ul>
+				<!-- copyright text -->
+				<div class="text-muted text-primary-hover mt-3"> Copyrights © 2024. Developed By <a href="#" class="text-success">Team Softrix</a></div>
+			</div>
+		</div>
+		
+	</div>
 </footer>
-<div class="footer-bottom">
-    <div class="auto-container">
-        <div class="content">
-            <div class="copyright"><a href="{{ route('view.home.page') }}">Rowad Al Ghad</a> © {{ date('Y') }} All Right Reserved</div>
-            <div class="copyright">Developed by <a href="https://nextwaveit.tech">Next Wave IT</a></div>
-        </div>            
-    </div>
-</div>
-

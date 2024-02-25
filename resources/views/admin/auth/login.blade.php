@@ -25,8 +25,8 @@
 	
 	
 </head>
-<body>
-<main>
+<body style="background-image: url({{ asset('images/login-bg.jpg') }}); background-size:cover;">
+<main >
     <section class="container">
         <center>
             <div class="col-md-4">
@@ -45,7 +45,9 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endforeach
-                    <h1 class="mb-2 h3">Admin Login</h1>
+
+                    <center><img src="{{ asset('images/logo.png') }}" style="height: 80px"></center>
+                    <hr>
                     <form class="mt-4 text-start" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="mb-3">
@@ -66,7 +68,7 @@
                             </div>
                             <a href="{{ route('password.request') }}">Forgot Password?</a>
                         </div>
-                        <div><button type="submit" class="btn btn-success w-100 mb-0">Login</button></div>
+                        <div><button type="submit" class="btn btn-primary w-100 mb-0 rounded-5">Login</button></div>
                     </form>
                 </div>
             </div>

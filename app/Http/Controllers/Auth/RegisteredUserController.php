@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -20,7 +21,11 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        return view('register');
+    }
+    
+    public function registerSuccess(){
+        return view('register-success');
     }
 
     /**
@@ -28,7 +33,7 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -42,10 +47,21 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return view('register-company-info',[
+            'user' => $user
+        ]);
     }
+
+    public function registerCompanyInfo(Request $request){
+        Company::create([
+            'user_id' => $request->user_id,
+            'company_name' => $request->company_name,
+            'company_type' => $request->company_type,
+            'number_of_employee' => $request->number_of_employee,
+
+        ]);
+
+        return view('register-success');
+    }
+
 }

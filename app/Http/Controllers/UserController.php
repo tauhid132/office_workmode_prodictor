@@ -13,9 +13,7 @@ class UserController extends Controller
 {
     public function viewDashboard(){
         return view('admin.dashboard',[
-            'total_users' => User::count(),
-            'total_blogs' => Blog::count(),
-            'total_bookings' => Booking::count(),
+            
         ]);
     }
     public function viewUsers(){

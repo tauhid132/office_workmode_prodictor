@@ -22,8 +22,8 @@
 						</div>
 						<!-- Content -->
 						<div class="ms-3">
-							<h4>{{ $total_users }}</h4>
-							<span>Total Users</span>
+							<h4>0</h4>
+							<span>Total Employees</span>
 						</div>
 					</div>
 				</div>
@@ -39,8 +39,8 @@
 						</div>
 						<!-- Content -->
 						<div class="ms-3">
-							<h4>{{ $total_blogs }}</h4>
-							<span>Blogs</span>
+							<h4>0</h4>
+							<span>Total Projects</span>
 						</div>
 					</div>
 				</div>
@@ -56,8 +56,8 @@
 						</div>
 						<!-- Content -->
 						<div class="ms-3">
-							<h4>{{ $total_bookings }}</h4>
-							<span>Bookings</span>
+							<h4>0</h4>
+							<span>Predictions</span>
 						</div>
 					</div>
 				</div>
@@ -74,7 +74,7 @@
 						<!-- Content -->
 						<div class="ms-3">
 							<h4>100</h4>
-							<span>Views</span>
+							<span>Ongoing Project</span>
 						</div>
 					</div>
 				</div>

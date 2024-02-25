@@ -63,7 +63,7 @@
                 
                 <li class="nav-item ms-3 dropdown">
                     <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img class="avatar-img rounded-5" src="{{ Auth::user()->profile_image == null ? asset('avatar.png') : asset('images/profile_images').'/'.Auth::user()->profile_image }}" alt="avatar">
+                        <img class="avatar-img rounded-5" src="{{ Auth::user()->profile_image == null ? asset('avatar.png') : asset('images').'/'.Auth::user()->profile_image }}" alt="avatar">
                     </a>
                     <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
                         <li class="px-3 mb-3">
