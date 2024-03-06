@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
-class EmployeeController extends Controller
+class ProjectController extends Controller
 {
-    public function viewEmployees(){
-        return view('company.employees');
+    public function viewProjects(){
+        return view('admin.projects');
     }
-
-    public function getEmployees(){
-        $data = Employee::all();
+    public function getProjects(){
+        $data = Project::all();
         return datatables($data)
         ->addIndexColumn()
         ->addColumn('created_at' , function($row){

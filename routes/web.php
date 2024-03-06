@@ -3,12 +3,15 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ContactUsSubmissionController;
 use App\Http\Controllers\CustomerReviewController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\NewsLetterSubscriptionController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Models\Booking;
 
 /*
@@ -35,9 +38,13 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/users/add-new-admin',[UserController::class, 'addNewAdmin'])->name('addNewAdmin');
     Route::post('/users/change-password',[UserController::class, 'changePassword'])->name('changePassword');
     
+    Route::get('/company-info',[CompanyController::class, 'viewCompanyInfo'])->name('viewCompanyInfo');
     
-    
+    Route::get('/employee/view-employees', [EmployeeController::class, 'viewEmployees'])->name('viewEmployees');
+    Route::get('/employee/get-employees', [EmployeeController::class, 'getEmployees'])->name('getEmployees');
 
+    Route::get('/projects/view-projects', [ProjectController::class, 'viewProjects'])->name('viewProjects');
+    Route::get('/projects/get-projects', [ProjectController::class, 'getProjects'])->name('getProjects');
    
 
     Route::get('generate-sitemap',[PageController::class, 'generateSitemap'])->name('generate.sitemap');

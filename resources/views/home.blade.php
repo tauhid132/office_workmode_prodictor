@@ -12,7 +12,7 @@
 							<!-- Title -->
 							<h1 class="mb-3 fs-2">Hybrid Workmode Predictor</h1>
 							<p class="mb-3">Increase your office's working efficiency using our ML Prodictor. Save your resouces & expand working talent pool.</p>
-							<a href="#" class="btn btn-primary-soft mb-0">Try Our Predictor<i class="bi bi-arrow-right fa-fw ms-2"></i></a>
+							<a href="#" class="btn btn-primary-soft mb-0">Explore Our Tool<i class="bi bi-arrow-right fa-fw ms-2"></i></a>
 						</div>
 
 						<!-- Image -->

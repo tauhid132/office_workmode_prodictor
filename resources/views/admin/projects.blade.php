@@ -1,11 +1,11 @@
 @extends('admin.master')
-@section('title',"Contact Form Submissions")
+@section('title',"Projects")
 @section('main-body')
 <div class="page-content-wrapper p-xxl-4">
     <div class="row">
         <div class="col-12 mb-4 mb-sm-5">
             <div class="d-sm-flex justify-content-between align-items-center">
-                <h1 class="h4 mb-3 mb-sm-0"><i class="fa fa-address-book me-2"></i>Contact Form Submission</h1>		
+                <h1 class="h4 mb-3 mb-sm-0"><i class="fa fa-address-book me-2"></i>Projects</h1>		
             </div>
         </div>
     </div>
@@ -15,11 +15,11 @@
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
-                        <th>Name</th>
-                        <th>Time</th>
-                        <th>Email</th>
-                        <th>Subject</th>
-                        <th>Message</th>
+                        <th>Project Type</th>
+                        <th>Project Time</th>
+                        <th>Budget</th>
+                        <th>Description</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
             </table>
@@ -40,14 +40,14 @@
         "processing" : true,
         "serverSide": true,
         "pageLength": 10,
-        "ajax" : "{{ route('get.contact.submits') }}",
+        "ajax" : "{{ route('getProjects') }}",
         "columns" : [
         {"data" : 'DT_RowIndex', "name" : 'No' },
-        {"data": "name"},
-        {"data": "created_at"},
-        {"data": "email"},
-        {"data": "subject"},
-        {"data": "message"},
+        {"data": "project_type"},
+        {"data": "project_time"},
+        {"data": "project_budget"},
+        {"data": "project_description"},
+        {"data": "action"},
         ]
     });
     
