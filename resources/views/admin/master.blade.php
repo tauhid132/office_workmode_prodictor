@@ -101,6 +101,7 @@
     
     $('.select-search').select2();
     $(".js-example-basic-multiple").select2();
+    $(".select2Input").select2({ dropdownParent: $('#addUserModal') });
 </script>
 
 @yield('script')

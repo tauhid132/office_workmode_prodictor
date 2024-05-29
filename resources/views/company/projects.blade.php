@@ -5,8 +5,12 @@
     <div class="row">
         <div class="col-12 mb-4 mb-sm-5">
             <div class="d-sm-flex justify-content-between align-items-center">
-                <h1 class="h4 mb-3 mb-sm-0"><i class="fa fa-address-book me-2"></i>Projects</h1>		
+                <h1 class="h4 mb-3 mb-sm-0"><i class="fa fa-address-book me-2"></i>Projects</h1>	
+                <div class="d-flex gap-2">
+                    <a href="{{ route('addNewProjectStepOne') }}" class="btn btn-success btn-sm mb-0"><i class="fa fa-plus me-2"></i>Add New Project</a>	
+                </div>		
             </div>
+            	
         </div>
     </div>
     <div class="card shadow mt-1">
@@ -44,7 +48,7 @@
         "columns" : [
         {"data" : 'DT_RowIndex', "name" : 'No' },
         {"data": "project_type"},
-        {"data": "project_time"},
+        {"data": "project_duration"},
         {"data": "project_budget"},
         {"data": "project_description"},
         {"data": "action"},

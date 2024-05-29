@@ -15,6 +15,7 @@ class Company extends Model
         'about_company',
         'address',
         'mobile',
+        'email',
         'number_of_employee'
     ];
 }

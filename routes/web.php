@@ -39,13 +39,28 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/users/change-password',[UserController::class, 'changePassword'])->name('changePassword');
     
     Route::get('/company-info',[CompanyController::class, 'viewCompanyInfo'])->name('viewCompanyInfo');
+    Route::post('/company-info',[CompanyController::class, 'updateCompanyInfo']);
     
     Route::get('/employee/view-employees', [EmployeeController::class, 'viewEmployees'])->name('viewEmployees');
     Route::get('/employee/get-employees', [EmployeeController::class, 'getEmployees'])->name('getEmployees');
 
+    Route::get('/employee/add-new-employee', [EmployeeController::class, 'viewAddNewEmployee'])->name('addNewEmployee');
+    Route::post('/employee/add-new-employee', [EmployeeController::class, 'addNewEmployee']);
+    Route::get('/employee/update-employee/{employee_id}', [EmployeeController::class, 'viewUpdateEmployee'])->name('updateEmployee');
+    Route::post('/employee/update-employee/{employee_id}', [EmployeeController::class, 'updateEmployee']);
+
     Route::get('/projects/view-projects', [ProjectController::class, 'viewProjects'])->name('viewProjects');
     Route::get('/projects/get-projects', [ProjectController::class, 'getProjects'])->name('getProjects');
    
+    Route::get('/projects/add-project/step-1', [ProjectController::class, 'viewAddNewProjectStepOne'])->name('addNewProjectStepOne');
+    Route::post('/projects/add-project/step-1', [ProjectController::class, 'addNewProjectStepOne']);
+
+    Route::get('/projects/add-project/step-2', [ProjectController::class, 'viewAddNewProjectStepTwo'])->name('addNewProjectStepTwo');
+    Route::post('/projects/add-project/step-2', [ProjectController::class, 'addNewProjectStepTwo']);
+
+    Route::get('/projects/add-project/step-3', [ProjectController::class, 'viewAddNewProjectStepThree'])->name('addNewProjectStepThree');
+    Route::post('/projects/add-project/step-3', [ProjectController::class, 'addNewProjectStepThree']);
+
 
     Route::get('generate-sitemap',[PageController::class, 'generateSitemap'])->name('generate.sitemap');
 
