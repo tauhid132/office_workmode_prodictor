@@ -1,9 +1,12 @@
-@extends('admin.master')
-@section('title', 'Employees')
+@extends('master')
 @section('main-body')
-<div class="page-content-wrapper p-xxl-4">
+@include('admin.includes.navbar')
+
+
+<section class="pt-0">
+	<div class="container vstack gap-4">
     <div class="row">
-        <div class="col-12 mb-4 mb-sm-5">
+        <div class="col-12 mb-4">
             <div class="d-sm-flex justify-content-between align-items-center">
                 <h1 class="h4 mb-3 mb-sm-0"><i class="fa fa-users me-1"></i>Employees</h1>
                 <div class="d-flex gap-2">
@@ -39,6 +42,7 @@
                         <th>No</th>
                         <th>Employee Name</th>
                         <th>Role</th>
+                        <th>Skills</th>
                         <th>Salary</th>
                         <th>Current W.Mode</th>
                         <th>Action</th>
@@ -49,6 +53,7 @@
         </div>
     </div>
 </div>
+</section>
 
 
 <div class="modal fade zoomIn" id="addUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -188,6 +193,7 @@
             {"data" : 'DT_RowIndex', "name" : 'DT_RowIndex' , "orderable": false, "searchable": false},
             {"data": "name"},
             {"data": "position"},
+            {"data": "skills"},
             {"data": "salary"},
             {"data": "current_working_mode"},
             {"data" : 'action', "name" : 'action' , "orderable": false, "searchable": false},

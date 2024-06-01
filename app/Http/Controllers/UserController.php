@@ -3,17 +3,23 @@
 namespace App\Http\Controllers;
 use datatables;
 use App\Models\Blog;
-use App\Models\Booking;
 use App\Models\User;
+use App\Models\Booking;
+use App\Models\Company;
+use App\Models\Project;
+use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 
 class UserController extends Controller
 {
     public function viewDashboard(){
+        $company = Company::where('user_id', Auth::user()->id)->first();
         return view('admin.dashboard',[
-            
+            'total_employees' => Employee::where('company_id', $company->id)->count(),
+            'total_projects' => Project::where('company_id', $company->id)->get(),
         ]);
     }
     public function viewUsers(){

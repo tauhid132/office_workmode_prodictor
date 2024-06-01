@@ -1,9 +1,10 @@
-@extends('admin.master')
-@section('title', 'Employees')
+@extends('master')
 @section('main-body')
-<div class="page-content-wrapper p-xxl-4">
+@include('admin.includes.navbar')
+<section class="pt-0">
+	<div class="container vstack gap-4">
     <div class="row">
-        <div class="col-12 mb-4 mb-sm-5">
+        <div class="col-12 mb-2">
             <div class="d-sm-flex justify-content-between align-items-center">
                 <h1 class="h4 mb-3 mb-sm-0"><i class="fa fa-add me-1"></i>Add New Employee</h1>
             </div>
@@ -85,6 +86,7 @@
         </div>
     </div>
 </div>
+</section>
 
 
 

@@ -1,7 +1,8 @@
-@extends('admin.master')
-@section('title','Profile Settings')
+@extends('master')
 @section('main-body')
-<div class="page-content-wrapper p-xxl-4">
+@include('admin.includes.navbar')
+<section class="pt-0">
+	<div class="container vstack gap-4">
     <div class="card border">
         <div class="card-header border-bottom">
             <h4 class="card-header-title">Profile Settings</h4>
@@ -74,4 +75,5 @@
         </div>
     </div>
 </div>
+</section>
 @endsection

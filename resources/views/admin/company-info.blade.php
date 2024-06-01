@@ -1,7 +1,7 @@
-@extends('admin.master')
-@section('title', 'Company Info')
+@extends('master')
 @section('main-body')
-<section class="pt-5">
+@include('admin.includes.navbar')
+<section class="pt-0">
 	<div class="container vstack gap-4">
 		<!-- Title START -->
 		<div class="row">
@@ -73,7 +73,11 @@
 						<div class="col-12">
 							<label class="form-label">Services</label>
 							<select class="form-select select-search w-100" name="zones[]" multiple="multiple">
-								<option value="">Seleccionar</option>
+								<option value="">Web Development</option>
+								<option value="">Software Development</option>
+								<option value="">APP Development</option>
+								<option value="">UI/UX Design</option>
+								<option value="">Security & Quality Assurance</option>
 								{{-- @foreach ($zones as $zone)
 									<option value="{{ $zone->id }}">{{ $zone->zone_name }}</option>
 									@endforeach --}}

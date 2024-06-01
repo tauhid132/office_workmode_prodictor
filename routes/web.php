@@ -51,15 +51,23 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/projects/view-projects', [ProjectController::class, 'viewProjects'])->name('viewProjects');
     Route::get('/projects/get-projects', [ProjectController::class, 'getProjects'])->name('getProjects');
+    Route::post('/projects/delete-project', [ProjectController::class, 'deleteProject'])->name('deleteProject');
+
+
    
     Route::get('/projects/add-project/step-1', [ProjectController::class, 'viewAddNewProjectStepOne'])->name('addNewProjectStepOne');
     Route::post('/projects/add-project/step-1', [ProjectController::class, 'addNewProjectStepOne']);
 
-    Route::get('/projects/add-project/step-2', [ProjectController::class, 'viewAddNewProjectStepTwo'])->name('addNewProjectStepTwo');
-    Route::post('/projects/add-project/step-2', [ProjectController::class, 'addNewProjectStepTwo']);
+    Route::get('/projects/add-project/step-2/{project_id}', [ProjectController::class, 'viewAddNewProjectStepTwo'])->name('addNewProjectStepTwo');
+    Route::post('/projects/add-project/step-2/{project_id}', [ProjectController::class, 'addNewProjectStepTwo']);
 
-    Route::get('/projects/add-project/step-3', [ProjectController::class, 'viewAddNewProjectStepThree'])->name('addNewProjectStepThree');
-    Route::post('/projects/add-project/step-3', [ProjectController::class, 'addNewProjectStepThree']);
+    Route::get('/projects/add-project/step-3/{project_id}', [ProjectController::class, 'viewAddNewProjectStepThree'])->name('addNewProjectStepThree');
+    Route::post('/projects/add-project/step-3/{project_id}', [ProjectController::class, 'addNewProjectStepThree']);
+
+    Route::get('/projects/manage-project/{project_id}', [ProjectController::class, 'viewManageProject'])->name('viewManageProject');
+    Route::get('/projects/project-feedback/{project_id}', [ProjectController::class, 'viewProjectFeedback'])->name('viewProjectFeedback');
+    Route::post('/projects/project-feedback/{project_id}', [ProjectController::class, 'saveProjectFeedback']);
+
 
 
     Route::get('generate-sitemap',[PageController::class, 'generateSitemap'])->name('generate.sitemap');

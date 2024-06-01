@@ -13,10 +13,10 @@ class EmployeeController extends Controller
     public function viewEmployees(){
         return view('company.employees');
     }
-
+    
     public function getEmployees(){
         $company = Company::where('user_id',  Auth::user()->id)->first();
-        $data = Employee::where('company_id', $company->id)->get();
+        $data = Employee::with('skills')->where('company_id', $company->id)->get();
         return datatables($data)
         ->addIndexColumn()
         ->addColumn('created_at' , function($row){
@@ -28,12 +28,34 @@ class EmployeeController extends Controller
             $btn = $btn.'<a><button id="'.$row->id.'" class="btn btn-sm btn-danger delete m-1"><i class="fa fa-trash"></i> Delete</button></a>';
             return $btn;
         })
-       
-       
-        ->rawColumns(['action' => 'action'])
+        ->addColumn('name', function($row){
+            $btn = '<div class="col">
+            <div class="d-flex align-items-center">
+            <div class="avatar avatar-xs flex-shrink-0">
+            <img class="avatar-img rounded-circle" src="'.asset('images/avatar.png').'" alt="avatar">
+            </div>
+            <div class="ms-2">
+            <h6 class="mb-0 fw-light">'.$row->name.'</h6>
+            </div>
+            </div>
+            </div>';
+            
+            return $btn;
+        })
+        ->addColumn('skills' , function($row){
+            $skills = array();
+            foreach($row->skills as $skill){
+                array_push($skills, $skill->skill_name);
+            }
+            return $skills;
+        })
+        
+        
+        
+        ->rawColumns(['action' => 'action', 'name' => 'name', 'skills' => 'skills'])
         ->make(true);
     }
-
+    
     public function viewAddNewEmployee(){
         return view('company.add-new-employee',[
             'skills' => Skill::all()
@@ -54,14 +76,14 @@ class EmployeeController extends Controller
         $employee->skills()->attach($request->skills);
         return redirect()->route('viewEmployees')->with('success', 'Employee Added Successfully!');
     }
-
+    
     public function viewUpdateEmployee($employee_id){
         return view('company.update-employee',[
             'employee' => Employee::find($employee_id),
             'skills' => Skill::all()
         ]);
     }
-
+    
     public function updateEmployee(Request $request, $employee_id){
         $employee = Employee::find($employee_id);
         $employee->update([

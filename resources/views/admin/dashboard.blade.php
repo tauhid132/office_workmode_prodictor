@@ -1,6 +1,7 @@
-@extends('admin.master')
+@extends('master')
 @section('main-body')
-<section class="pt-5">
+@include('admin.includes.navbar')
+<section class="pt-1">
 	<div class="container vstack gap-4">
 		<!-- Title START -->
 		<div class="row">
@@ -10,72 +11,63 @@
 		</div>	
 		<!-- Title END -->
 
-		<!-- Counter START -->
-		<div class="row g-4">
+		<div class="row g-4 mb-5">
 			<!-- Counter item -->
-			<div class="col-sm-6 col-xl-3">
-				<div class="card card-body border">
-					<div class="d-flex align-items-center">
+			<div class="col-md-6 col-xxl-3">
+				<div class="card card-body bg-warning bg-opacity-10 border border-warning border-opacity-25 p-4 h-100">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Digit -->
+						<div>
+							<h4 class="mb-0">{{ $total_employees }}</h4>
+							<span class="h6 fw-light mb-0">Total Employees</span>
+						</div>
 						<!-- Icon -->
-						<div class="icon-xl bg-success rounded-3 text-white">
-							<i class="fa fa-users"></i>
-						</div>
-						<!-- Content -->
-						<div class="ms-3">
-							<h4>0</h4>
-							<span>Total Employees</span>
-						</div>
+						<div class="icon-lg rounded-circle bg-warning text-white mb-0"><i class="fa-solid fa fa-users fa-fw"></i></div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Counter item -->
-			<div class="col-sm-6 col-xl-3">
-				<div class="card card-body border">
-					<div class="d-flex align-items-center">
+			<div class="col-md-6 col-xxl-3">
+				<div class="card card-body bg-success bg-opacity-10 border border-success border-opacity-25 p-4 h-100">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Digit -->
+						<div>
+							<h4 class="mb-0">{{ $total_projects->count() }}</h4>
+							<span class="h6 fw-light mb-0">Total Projects</span>
+						</div>
 						<!-- Icon -->
-						<div class="icon-xl bg-info rounded-3 text-white">
-							<i class="bi bi-graph-up-arrow"></i>
-						</div>
-						<!-- Content -->
-						<div class="ms-3">
-							<h4>0</h4>
-							<span>Total Projects</span>
-						</div>
+						<div class="icon-lg rounded-circle bg-success text-white mb-0"><i class="fa-solid fa-hand-holding-dollar fa-fw"></i></div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Counter item -->
-			<div class="col-sm-6 col-xl-3">
-				<div class="card card-body border">
-					<div class="d-flex align-items-center">
+			<div class="col-md-6 col-xxl-3">
+				<div class="card card-body bg-primary bg-opacity-10 border border-primary border-opacity-25 p-4 h-100">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Digit -->
+						<div>
+							<h4 class="mb-0">{{ $total_projects->where('status', 'On-Going')->count() }}</h4>
+							<span class="h6 fw-light mb-0">On-Going Projects</span>
+						</div>
 						<!-- Icon -->
-						<div class="icon-xl bg-warning rounded-3 text-white">
-							<i class="bi bi-bar-chart-line-fill"></i>
-						</div>
-						<!-- Content -->
-						<div class="ms-3">
-							<h4>0</h4>
-							<span>Predictions</span>
-						</div>
+						<div class="icon-lg rounded-circle bg-primary text-white mb-0"><i class="fa-solid fa fa-spinner fa-fw"></i></div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Counter item -->
-			<div class="col-sm-6 col-xl-3">
-				<div class="card card-body border">
-					<div class="d-flex align-items-center">
+			<div class="col-md-6 col-xxl-3">
+				<div class="card card-body bg-info bg-opacity-10 border border-info border-opacity-25 p-4 h-100">
+					<div class="d-flex justify-content-between align-items-center">
+						<!-- Digit -->
+						<div>
+							<h4 class="mb-0">{{ $total_projects->where('status', 'Completed')->count() }}</h4>
+							<span class="h6 fw-light mb-0">Completed Projects</span>
+						</div>
 						<!-- Icon -->
-						<div class="icon-xl bg-primary rounded-3 text-white">
-							<i class="bi bi-star"></i>
-						</div>
-						<!-- Content -->
-						<div class="ms-3">
-							<h4>100</h4>
-							<span>Ongoing Project</span>
-						</div>
+						<div class="icon-lg rounded-circle bg-info text-white mb-0"><i class="fa-solid fa-building-circle-check fa-fw"></i></div>
 					</div>
 				</div>
 			</div>
