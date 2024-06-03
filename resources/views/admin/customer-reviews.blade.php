@@ -23,7 +23,6 @@
                         <th>Location</th>
                         <th>Action</th>
                         <th>Review</th>
-                        
                     </tr>
                 </thead>
             </table>

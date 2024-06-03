@@ -51,7 +51,15 @@
         border: 3px solid #28a745 !important;
     }
 </style>
-
+<style>
+    .select2-container .select2-search--inline .select2-search__field {
+        height: 24px; !important
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background-color: #5143d9;
+        color: #fff
+    }
+    </style>
 <body>
     
     @include('includes.navbar')
@@ -71,8 +79,8 @@
 <script src="{{ asset('theme/vendor/flatpickr/js/flatpickr.min.js') }}"></script>
 <script src="{{ asset('theme/js/functions.js') }}"></script>
 
-{{-- <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> --}}
-<script src="{{ asset('theme/jquery.dataTables.min.js') }}"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>

@@ -19,7 +19,7 @@ class UserController extends Controller
         $company = Company::where('user_id', Auth::user()->id)->first();
         return view('admin.dashboard',[
             'total_employees' => Employee::where('company_id', $company->id)->count(),
-            'total_projects' => Project::where('company_id', $company->id)->get(),
+            'total_projects' => Project::all(),
         ]);
     }
     public function viewUsers(){

@@ -10,6 +10,24 @@
                 </div>
             </div>
         </div>
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong> {{ $error }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endforeach
+            @if(session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong> {{ session()->get('error') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>  {{ session()->get('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
         <div class="card shadow mt-1">
             <div class="card-body">
                 <form method="post" action="{{ route('addNewProjectStepTwo' , $project->id) }}">
@@ -57,7 +75,7 @@
                                 <ul class="list-group list-group-borderless mb-0" style="display: inline">
                                     @foreach ($skills as $skill)
                                     <li class="list-group-item h6 fw-light d-flex mb-0">
-                                        <input type="checkbox" {{ (in_array($skill->id, $required_skills)) ? 'checked' : '' }} name="categories[]" value="{{ $skill->id }}" class="form-check-input me-2">{{ $skill->skill_name }}
+                                        <input type="checkbox" {{ (in_array($skill->id, $required_skills)) ? 'checked' : '' }} name="categories[]" value="{{ $skill->skill_name }}" class="form-check-input me-2">{{ $skill->skill_name }}
                                     </li> 
                                     @endforeach
                                 </ul>
@@ -154,7 +172,7 @@
                                                 @endif
                                              </td>
                                             
-                                            <td> <a href="#" class="btn btn-sm btn-primary mb-0">Assign</a> </td>
+                                            <td> <a href="{{ route('assignEmployee') }}" class="btn btn-sm btn-primary mb-0">Assign</a> </td>
                                         </tr>
                                         
                                         @endforeach

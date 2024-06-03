@@ -65,8 +65,6 @@
                         <div class="d-sm-flex justify-content-end">
                             <button type="submit" class="btn btn-primary btn-sm mb-0 mt-3"><i class="fa fa-add me-1"></i>Analyze Project</button>
                         </div>
-                        
-                        
                     </div>
                 </form>
             </div>

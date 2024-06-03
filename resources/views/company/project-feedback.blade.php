@@ -118,11 +118,9 @@
                                                     <th scope="col" class="border-0">Position</th>
                                                     <th scope="col" class="border-0">Duties/Skills</th>
                                                     <th scope="col" class="border-0">Working Mode</th>
-                                                    <th scope="col" class="border-0">Action</th>
                                                 </tr>
                                             </thead>
-                                            
-                                            <!-- Table body START -->
+                                           
                                             <tbody class="border-top-0">
                                                 @foreach ($project->employees as $employee)
                                                 @php
@@ -154,7 +152,7 @@
                                                         @endif
                                                     </td>
                                                     
-                                                    <td> <a href="#" class="btn btn-sm btn-primary mb-0"><i class="fa fa-star me-1"></i>Review</a> </td>
+                                                    
                                                 </tr>
                                                 
                                                 @endforeach

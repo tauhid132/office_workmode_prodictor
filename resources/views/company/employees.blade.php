@@ -152,14 +152,15 @@
                     <h5 class="modal-title" id="exampleModalLabel">Import Employee</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                 </div>
-                <form id="change_password_form">
+                <form action="{{ route('viewEmployees') }}" method="get">
+                    @csrf
                     <div class="modal-body">
                         <center><i class="fa fa-info-circle text-success me-2 mb-3"></i>Click here to <a href="#">Download</a> Sample CSV File</center>
                         <div class="row g-3">
                             <input type="hidden" name="id" id="id">
                             <div class="col-lg-12">
                                 <div>
-                                    <input type="file" name="employee_list" class="form-control" placeholder="Enter New Password" required />
+                                    <input type="file"  class="form-control" placeholder="Enter New Password" required />
                                 </div>
                             </div>
                         </div>

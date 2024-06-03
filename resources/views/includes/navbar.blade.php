@@ -17,9 +17,9 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link {{ Request::is('/') ? 'active':''  }}" href="{{ route('view.home.page') }}">Home</a>
 					</li>
-					<li class="nav-item dropdown">
+					{{-- <li class="nav-item dropdown">
 						<a class="nav-link {{ Request::is('eventos') ? 'active':''  }}" href="">Our Services</a>
-					</li>
+					</li> --}}
 					<li class="nav-item dropdown">
 						<a class="nav-link {{ Request::is('blogs') ? 'active':''  }}" href="">Workmode Predictor</a>
 					</li>

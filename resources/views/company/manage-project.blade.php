@@ -8,13 +8,31 @@
                 <div class="d-sm-flex justify-content-between align-items-center">
                     <h1 class="h4 mb-3 mb-sm-0"><i class="fa fa-cog me-1"></i>Manage Project</h1>
                     <div class="d-flex gap-2">
-                        <a href="{{ route('addNewEmployee') }}" class="btn btn-success btn-sm mb-0"><i class="fa fa-spinner me-2"></i>Start Project</a>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#importEmployeeModal" class="btn btn-primary btn-sm mb-0"><i class="fa fa-check me-2"></i>Finish Project</a>
-                        <a href="{{ route('viewProjectFeedback', $project->id) }}" class="btn btn-warning btn-sm mb-0"><i class="fa fa-star me-2"></i>Project Feedback</a>	
+                        <a href="{{ route('startProject', $project->id) }}" class="btn btn-success btn-sm mb-0"><i class="fa fa-spinner me-2"></i>Start Project</a>
+                        <a href="{{ route('finishProject', $project->id) }}" class="btn btn-primary btn-sm mb-0"><i class="fa fa-check me-2"></i>Finish Project</a>
+                        <a href="{{ route('viewProjectFeedback', $project->id) }}" class="btn btn-warning btn-sm mb-0 {{ $project->status != 'Completed' ? 'disabled' : ''  }}"><i class="fa fa-star me-2"></i>Project Feedback</a>	
                     </div>					
                 </div>
             </div>
         </div>
+        @foreach ($errors->all() as $error)
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong> {{ $error }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endforeach
+            @if(session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong> {{ session()->get('error') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>  {{ session()->get('success') }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
         <div class="card shadow mt-1">
             <div class="card-body">
                 <form method="post" action="{{ route('addNewProjectStepTwo' , $project->id) }}">

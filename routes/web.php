@@ -68,9 +68,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/projects/project-feedback/{project_id}', [ProjectController::class, 'viewProjectFeedback'])->name('viewProjectFeedback');
     Route::post('/projects/project-feedback/{project_id}', [ProjectController::class, 'saveProjectFeedback']);
 
-
+    Route::get('/projects/start-project/{project_id}', [ProjectController::class, 'startProject'])->name('startProject');
+    Route::get('/projects/finish-project/{project_id}', [ProjectController::class, 'finishProject'])->name('finishProject');
 
     Route::get('generate-sitemap',[PageController::class, 'generateSitemap'])->name('generate.sitemap');
+
+    Route::get('assign-employee',[ProjectController::class, 'assignEmployee'])->name('assignEmployee');
+
+
+
 
 
 
